@@ -84,6 +84,7 @@ int main(int argc, char *argv[])
                     if(ret == 0) {
                         printf("Server closed connection: %d\n", sock);
                         close(sock);
+                        kill(pid, SIGKILL);
                         isClientwork = 0;
                     }
                     else printf("%s\n", message);
